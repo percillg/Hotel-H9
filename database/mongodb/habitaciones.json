@@ -1,0 +1,82 @@
+[
+  {
+    "_id": {
+      "$numberInt": "1"
+    },
+    "numero": {
+      "$numberInt": "101"
+    },
+    "tipo": "Individual",
+    "capacidad": {
+      "$numberInt": "1"
+    },
+    "precio": {
+      "$numberDecimal": "45000.00"
+    },
+    "estado": "Disponible"
+  },
+  {
+    "_id": {
+      "$numberInt": "2"
+    },
+    "numero": {
+      "$numberInt": "102"
+    },
+    "tipo": "Doble",
+    "capacidad": {
+      "$numberInt": "2"
+    },
+    "precio": {
+      "$numberDecimal": "60000.00"
+    },
+    "estado": "Ocupada"
+  },
+  {
+    "_id": {
+      "$numberInt": "3"
+    },
+    "numero": {
+      "$numberInt": "103"
+    },
+    "tipo": "Doble Superior",
+    "capacidad": {
+      "$numberInt": "2"
+    },
+    "precio": {
+      "$numberDecimal": "70000.00"
+    },
+    "estado": "Disponible"
+  },
+  {
+    "_id": {
+      "$numberInt": "4"
+    },
+    "numero": {
+      "$numberInt": "201"
+    },
+    "tipo": "Suite",
+    "capacidad": {
+      "$numberInt": "4"
+    },
+    "precio": {
+      "$numberDecimal": "95000.00"
+    },
+    "estado": "Disponible"
+  },
+  {
+    "_id": {
+      "$numberInt": "5"
+    },
+    "numero": {
+      "$numberInt": "202"
+    },
+    "tipo": "Doble",
+    "capacidad": {
+      "$numberInt": "2"
+    },
+    "precio": {
+      "$numberDecimal": "60000.00"
+    },
+    "estado": "En limpieza"
+  }
+]

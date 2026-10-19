@@ -1,0 +1,35 @@
+[
+  {
+    "_id": {
+      "$numberInt": "1"
+    },
+    "nombre": "Juan",
+    "apellido": "Perez",
+    "rut": "12.345.678-9",
+    "telefono": "912345678",
+    "email": "juan@gmail.com",
+    "direccion": "Valparaiso"
+  },
+  {
+    "_id": {
+      "$numberInt": "2"
+    },
+    "nombre": "Maria",
+    "apellido": "Gomez",
+    "rut": "18.765.432-1",
+    "telefono": "923456789",
+    "email": "maria@gmail.com",
+    "direccion": "Vina del Mar"
+  },
+  {
+    "_id": {
+      "$numberInt": "3"
+    },
+    "nombre": "Carlos",
+    "apellido": "Ruiz",
+    "rut": "20.111.222-3",
+    "telefono": "934567890",
+    "email": "carlos@gmail.com",
+    "direccion": "Quilpue"
+  }
+]

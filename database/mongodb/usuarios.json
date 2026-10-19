@@ -1,0 +1,22 @@
+[
+  {
+    "_id": {
+      "$numberInt": "1"
+    },
+    "nombre": "Administrador",
+    "apellido": "Hotel",
+    "nombre_usuario": "admin",
+    "password_hash": "$2y$12$abcdefghijklmnopqrstuuABCDEFGHIJKLMNOPQRSTUVWXYZ012345",
+    "rol": "Administrador"
+  },
+  {
+    "_id": {
+      "$numberInt": "2"
+    },
+    "nombre": "Recepcion",
+    "apellido": "Hotel",
+    "nombre_usuario": "recepcion",
+    "password_hash": "$2y$12$abcdefghijklmnopqrstuuABCDEFGHIJKLMNOPQRSTUVWXYZ012345",
+    "rol": "Recepcionista"
+  }
+]

@@ -1,0 +1,184 @@
+[
+  {
+    "_id": {
+      "$numberInt": "1"
+    },
+    "usuario_id": {
+      "$numberInt": "1"
+    },
+    "huesped": {
+      "_id": {
+        "$numberInt": "1"
+      },
+      "rut": "12.345.678-9",
+      "nombre": "Juan Perez"
+    },
+    "fecha_reserva": {
+      "$date": "2026-09-01T00:00:00.000Z"
+    },
+    "fecha_entrada": {
+      "$date": "2026-09-10T00:00:00.000Z"
+    },
+    "fecha_salida": {
+      "$date": "2026-09-15T00:00:00.000Z"
+    },
+    "estado": "Confirmada",
+    "habitaciones": [
+      {
+        "id_detalle": {
+          "$numberInt": "1"
+        },
+        "habitacion_id": {
+          "$numberInt": "1"
+        },
+        "numero": {
+          "$numberInt": "101"
+        },
+        "tipo": "Individual",
+        "precio_noche": {
+          "$numberDecimal": "45000.00"
+        }
+      }
+    ],
+    "estadia": {
+      "id_estadia": {
+        "$numberInt": "1"
+      },
+      "fecha_checkin": {
+        "$date": "2026-09-10T15:00:00.000Z"
+      },
+      "fecha_checkout": null,
+      "estado": "Activa",
+      "cargos": [
+        {
+          "id_cargo": {
+            "$numberInt": "1"
+          },
+          "servicio_id": {
+            "$numberInt": "1"
+          },
+          "servicio": "Minibar",
+          "cantidad": {
+            "$numberInt": "2"
+          },
+          "precio_unitario": {
+            "$numberDecimal": "10000.00"
+          },
+          "subtotal": {
+            "$numberDecimal": "20000.00"
+          },
+          "fecha": {
+            "$date": "2026-09-11T18:30:00.000Z"
+          }
+        },
+        {
+          "id_cargo": {
+            "$numberInt": "2"
+          },
+          "servicio_id": {
+            "$numberInt": "2"
+          },
+          "servicio": "Servicio a la habitacion",
+          "cantidad": {
+            "$numberInt": "1"
+          },
+          "precio_unitario": {
+            "$numberDecimal": "15000.00"
+          },
+          "subtotal": {
+            "$numberDecimal": "15000.00"
+          },
+          "fecha": {
+            "$date": "2026-09-12T20:00:00.000Z"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "_id": {
+      "$numberInt": "2"
+    },
+    "usuario_id": {
+      "$numberInt": "1"
+    },
+    "huesped": {
+      "_id": {
+        "$numberInt": "2"
+      },
+      "rut": "18.765.432-1",
+      "nombre": "Maria Gomez"
+    },
+    "fecha_reserva": {
+      "$date": "2026-09-02T00:00:00.000Z"
+    },
+    "fecha_entrada": {
+      "$date": "2026-09-12T00:00:00.000Z"
+    },
+    "fecha_salida": {
+      "$date": "2026-09-14T00:00:00.000Z"
+    },
+    "estado": "Confirmada",
+    "habitaciones": [
+      {
+        "id_detalle": {
+          "$numberInt": "2"
+        },
+        "habitacion_id": {
+          "$numberInt": "3"
+        },
+        "numero": {
+          "$numberInt": "103"
+        },
+        "tipo": "Doble Superior",
+        "precio_noche": {
+          "$numberDecimal": "70000.00"
+        }
+      }
+    ],
+    "estadia": null
+  },
+  {
+    "_id": {
+      "$numberInt": "3"
+    },
+    "usuario_id": {
+      "$numberInt": "1"
+    },
+    "huesped": {
+      "_id": {
+        "$numberInt": "3"
+      },
+      "rut": "20.111.222-3",
+      "nombre": "Carlos Ruiz"
+    },
+    "fecha_reserva": {
+      "$date": "2026-10-01T00:00:00.000Z"
+    },
+    "fecha_entrada": {
+      "$date": "2026-10-20T00:00:00.000Z"
+    },
+    "fecha_salida": {
+      "$date": "2026-10-23T00:00:00.000Z"
+    },
+    "estado": "Confirmada",
+    "habitaciones": [
+      {
+        "id_detalle": {
+          "$numberInt": "3"
+        },
+        "habitacion_id": {
+          "$numberInt": "4"
+        },
+        "numero": {
+          "$numberInt": "201"
+        },
+        "tipo": "Suite",
+        "precio_noche": {
+          "$numberDecimal": "95000.00"
+        }
+      }
+    ],
+    "estadia": null
+  }
+]

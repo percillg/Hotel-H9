@@ -1,0 +1,35 @@
+[
+  {
+    "_id": {
+      "$numberInt": "1"
+    },
+    "nombre": "Minibar",
+    "descripcion": "Consumo de productos del minibar",
+    "precio": {
+      "$numberDecimal": "10000.00"
+    },
+    "estado": "Activo"
+  },
+  {
+    "_id": {
+      "$numberInt": "2"
+    },
+    "nombre": "Servicio a la habitacion",
+    "descripcion": "Servicio de comida a la habitacion",
+    "precio": {
+      "$numberDecimal": "15000.00"
+    },
+    "estado": "Activo"
+  },
+  {
+    "_id": {
+      "$numberInt": "3"
+    },
+    "nombre": "Lavanderia",
+    "descripcion": "Servicio de lavado de ropa",
+    "precio": {
+      "$numberDecimal": "12000.00"
+    },
+    "estado": "Activo"
+  }
+]

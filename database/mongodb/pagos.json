@@ -1,0 +1,18 @@
+[
+  {
+    "_id": {
+      "$numberInt": "1"
+    },
+    "reserva_id": {
+      "$numberInt": "1"
+    },
+    "fecha_pago": {
+      "$date": "2026-09-10T14:30:00.000Z"
+    },
+    "monto": {
+      "$numberDecimal": "100000.00"
+    },
+    "metodo_pago": "Tarjeta",
+    "estado": "Pagado"
+  }
+]
