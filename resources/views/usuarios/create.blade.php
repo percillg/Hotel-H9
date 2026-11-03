@@ -18,6 +18,7 @@
                 <option value="Recepcionista">Recepcionista</option>
                 <option value="Administrador">Administrador</option>
                 <option value="Personal de acceso">Personal de acceso</option>
+                <option value="Mantenimiento">Mantenimiento / Limpieza</option>
             </select></label>
             <div style="display:flex;gap:12px;align-items:center;">
                 <button type="submit" class="btn-primary">Guardar usuario</button>

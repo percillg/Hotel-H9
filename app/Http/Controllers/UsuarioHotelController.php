@@ -14,6 +14,7 @@ class UsuarioHotelController extends Controller
 
     public function index()
     {
+        if (session('usuario.rol') !== 'Administrador') abort(403);
         $usuarios = $this->mongo->all('usuarios', [], ['sort' => ['nombre' => 1]]);
         return view('usuarios.index', compact('usuarios'));
     }
@@ -33,7 +34,7 @@ class UsuarioHotelController extends Controller
             'apellido' => 'required|string|max:50',
             'nombre_usuario' => 'required|string|max:50',
             'password' => 'required|string|min:10',
-            'rol' => 'required|in:Administrador,Recepcionista,Personal de acceso',
+            'rol' => 'required|in:Administrador,Recepcionista,Personal de acceso,Mantenimiento',
         ]);
 
         if ($this->mongo->one('usuarios', ['nombre_usuario' => $datos['nombre_usuario']])) {

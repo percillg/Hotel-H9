@@ -56,11 +56,32 @@ class HabitacionController extends Controller
 
     public function cambiarEstado(Request $request, int $id)
     {
-        $datos = $request->validate(['estado' => 'required|in:Disponible,Reservada,Ocupada,En limpieza,Fuera de servicio']);
-        $result = $this->mongo->collection('habitaciones')->updateOne(['_id' => $id], ['$set' => ['estado' => $datos['estado']]]);
+        $rol = session('usuario.rol');
 
-        if ($result->getMatchedCount() === 0) return back()->withErrors('La habitación no existe.');
+        if (!in_array($rol, ['Administrador', 'Recepcionista', 'Mantenimiento'], true)) {
+            abort(403, 'No tienes permiso para cambiar el estado de una habitación.');
+        }
 
-        return redirect()->route('habitaciones.index')->with('success', 'Estado actualizado en MongoDB.');
+        $estados = $rol === 'Mantenimiento'
+            ? 'Disponible,En limpieza,Fuera de servicio'
+            : 'Disponible,Reservada,Ocupada,En limpieza,Fuera de servicio';
+
+        $datos = $request->validate(['estado' => 'required|in:' . $estados]);
+        $filtro = ['_id' => $id];
+
+        if ($rol === 'Mantenimiento') {
+            $filtro['estado'] = ['$nin' => ['Reservada', 'Ocupada']];
+        }
+
+        $resultado = $this->mongo->collection('habitaciones')->updateOne(
+            $filtro,
+            ['$set' => ['estado' => $datos['estado']]]
+        );
+
+        if ($resultado->getMatchedCount() === 0) {
+            return back()->withErrors('No se pudo cambiar el estado: habitación inexistente o gestionada por recepción.');
+        }
+
+        return redirect()->route('habitaciones.index')->with('success', 'Estado actualizado correctamente.');
     }
 }

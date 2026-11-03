@@ -20,7 +20,7 @@ const esquemas = {
       apellido: { bsonType: "string" },
       nombre_usuario: { bsonType: "string" },
       password_hash: { bsonType: "string" },
-      rol: { enum: ["Administrador", "Recepcionista", "Personal de acceso"] }
+      rol: { enum: ["Administrador", "Recepcionista", "Personal de acceso", "Mantenimiento"] }
     }
   ),
   huespedes: requerido(
