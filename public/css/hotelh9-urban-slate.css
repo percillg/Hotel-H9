@@ -188,4 +188,32 @@ th {
 .stat-card,
 .summary-card {
     text-align: center !important;
+}.content .dashboard-grid .stat-card,
+.content .dashboard-content .panel {
+    background: #D8C9C1 !important;
+    border: 1px solid #B9A69B !important;
+    box-shadow: 0 4px 12px rgba(35, 30, 28, 0.10) !important;
+    color: #3F3835 !important;
+}
+
+.content .dashboard-grid .stat-card .stat-icon {
+    background: #C4B2A8 !important;
+    color: #5E5653 !important;
+}
+
+.content .dashboard-content .panel .tabla-dashboard {
+    background: transparent !important;
+}
+
+.content .dashboard-content .panel .tabla-dashboard tbody tr {
+    background: transparent !important;
+}
+
+.content .dashboard-content .panel .tabla-dashboard thead th {
+    background: #C6B5AB !important;
+    color: #3F3835 !important;
+}
+
+.content .dashboard-content .panel .tabla-dashboard td {
+    border-bottom-color: #B9A69B !important;
 }

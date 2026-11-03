@@ -1,0 +1,191 @@
+:root {
+    --h9-page: #E9E6E7;
+    --h9-card: #AB978C;
+    --h9-card-soft: #C6B7AE;
+    --h9-dark: #5E5653;
+    --h9-blue: #6B7C98;
+    --h9-text: #3F3835;
+    --h9-white: #ffffff;
+    --h9-border: #9a877d;
+}
+
+/* Fondo general */
+body,
+body:not(.login-theme) {
+    background-color: var(--h9-page) !important;
+    color: var(--h9-text) !important;
+}
+
+/* Sidebar */
+.sidebar {
+    background: var(--h9-dark) !important;
+    color: var(--h9-white) !important;
+}
+
+.sidebar a,
+.sidebar .nav-link,
+.sidebar .menu-link,
+.sidebar span,
+.sidebar i {
+    color: var(--h9-white) !important;
+}
+
+/* Logo / bloque superior */
+.logo-icon,
+.avatar {
+    background: var(--h9-card) !important;
+    color: var(--h9-dark) !important;
+}
+
+/* TODOS LOS CUADROS / TARJETAS / PANELES */
+.card,
+.dashboard-card,
+.stat-card,
+.summary-card,
+.widget,
+.panel,
+.module-card,
+.info-box,
+.box,
+.content-box,
+.content-card,
+.table-card,
+.form-card,
+.shadow-sm,
+.bg-white,
+.login-card,
+.modal-content,
+.resumen-box {
+    background-color: var(--h9-card) !important;
+    border: 1px solid var(--h9-border) !important;
+    border-radius: 14px !important;
+    color: var(--h9-text) !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08) !important;
+}
+
+/* Encabezado de tarjetas */
+.card-header,
+.panel-heading,
+.widget-header,
+.box-header {
+    background-color: rgba(94, 86, 83, 0.10) !important;
+    color: var(--h9-text) !important;
+    border-bottom: 1px solid var(--h9-border) !important;
+    text-align: center !important;
+    font-weight: 600 !important;
+}
+
+/* Contenido interno */
+.card-body,
+.panel-body,
+.widget-body,
+.box-body {
+    background: transparent !important;
+    color: var(--h9-text) !important;
+}
+
+/* Cuadrito pequeño de iconos dentro de tarjetas */
+.icon-box,
+.stat-icon,
+.card-icon,
+.dashboard-icon {
+    background: var(--h9-card-soft) !important;
+    color: var(--h9-dark) !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(94, 86, 83, 0.15) !important;
+}
+
+/* Títulos y números */
+h1, h2, h3, h4, h5, h6,
+.card-title,
+.panel-title,
+.widget-title {
+    color: var(--h9-text) !important;
+    text-align: center !important;
+}
+
+.card p,
+.card span,
+.card small,
+.card strong {
+    color: var(--h9-text) !important;
+}
+
+/* Inputs */
+input,
+select,
+textarea {
+    background: #f6f2ef !important;
+    color: var(--h9-text) !important;
+    border: 1px solid var(--h9-border) !important;
+    border-radius: 10px !important;
+}
+
+/* Botones */
+.btn-primary,
+button.btn-primary,
+a.btn-primary {
+    background-color: var(--h9-blue) !important;
+    border-color: var(--h9-blue) !important;
+    color: #fff !important;
+}
+
+.btn-success,
+button.btn-success,
+a.btn-success {
+    background-color: var(--h9-dark) !important;
+    border-color: var(--h9-dark) !important;
+    color: #fff !important;
+}
+
+.btn-danger,
+button.btn-danger,
+a.btn-danger {
+    background-color: #9b5b55 !important;
+    border-color: #9b5b55 !important;
+    color: #fff !important;
+}
+
+/* Tablas */
+.table,
+table {
+    color: var(--h9-text) !important;
+}
+
+.table thead th,
+thead th {
+    background-color: var(--h9-dark) !important;
+    color: var(--h9-white) !important;
+    text-align: center !important;
+}
+
+.table tbody tr {
+    background-color: rgba(255,255,255,0.15) !important;
+}
+
+.table td,
+.table th,
+td,
+th {
+    text-align: center !important;
+    vertical-align: middle !important;
+}
+
+/* Login */
+.login-theme {
+    background-color: var(--h9-page) !important;
+}
+
+.login-card,
+.auth-card,
+.login-box {
+    background-color: var(--h9-card) !important;
+}
+
+/* Centrar textos importantes */
+.text-center-force,
+.dashboard-card,
+.stat-card,
+.summary-card {
+    text-align: center !important;
+}
