@@ -800,6 +800,67 @@ html, body, body:not(.login-theme), body.login-theme {
     justify-content: center !important;
 }
 </style>
+    <style id="hotelh9-tarjetas-globales">
+:root {
+    --h9-panel: #C4B5AA;
+    --h9-soft: #D8CBC3;
+    --h9-border: #A99183;
+    --h9-text: #332C29;
+}
+
+.content :is(.stat-card, .panel, .card, .tabla-container, .form-container, .resumen-card, .config-card, .selector-card, .info-card, .filtros-card, .tabla-card, .dashboard-card, .summary-card, .content-card, .form-card, .widget, .content-box, .module-card),
+.content :is(.stat-card, .panel, .card, .tabla-container, .form-container, .resumen-card, .config-card, .selector-card, .info-card, .filtros-card, .tabla-card, .dashboard-card, .summary-card, .content-card, .form-card, .widget, .content-box, .module-card) > :is(.card-body, .panel-body, .widget-body),
+.login-theme .panel,
+.login-theme .login-card {
+    background: #C4B5AA !important;
+    background-color: #C4B5AA !important;
+    border-color: #A99183 !important;
+    color: #332C29 !important;
+    box-shadow: 0 4px 12px rgba(37, 29, 25, .09) !important;
+}
+
+.content :is(.card-header, .panel-header, .widget-header, .box-header),
+.content .resumen-header {
+    background: transparent !important;
+    color: #332C29 !important;
+}
+
+.content :is(.stat-icon, .resumen-icon),
+.content .panel .estado-icon:not(.estado-disponible):not(.estado-ocupada):not(.estado-limpieza) {
+    background: #D8CBC3 !important;
+    color: #5E5653 !important;
+}
+
+.content :is(.stat-label, .stat-detail, .stat-value, .resumen-label, .resumen-numero, .resumen-valor, .panel-title, .panel-description, .info-label, .info-value, .form-title),
+.login-theme .panel :is(h1, p, label) {
+    color: #332C29 !important;
+}
+
+.content :is(.tabla-dashboard, .tabla-reservas, .tabla-habitaciones, .tabla-estadias, .tabla-responsive),
+.content :is(.tabla-dashboard, .tabla-reservas, .tabla-habitaciones, .tabla-estadias) tbody,
+.content :is(.tabla-dashboard, .tabla-reservas, .tabla-habitaciones, .tabla-estadias) tbody tr {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+.content table thead th {
+    background: #B4A196 !important;
+    color: #302824 !important;
+    border-color: #A99183 !important;
+}
+
+.content table tbody tr:hover {
+    background: #BDA99E !important;
+}
+
+.content input:not([type="checkbox"]):not([type="radio"]),
+.content select,
+.content textarea,
+.login-theme input {
+    background: #F5F0EC !important;
+    color: #332C29 !important;
+}
+</style>
 </head>
 
 <body>
@@ -826,13 +887,15 @@ html, body, body:not(.login-theme), body.login-theme {
 
         <nav class="menu">
 
-            <a href="{{ route('dashboard') }}"
+            @if (session('usuario.rol') !== 'Mantenimiento')
+<a href="{{ route('dashboard') }}"
                class="menu-item @yield('menu-dashboard')">
 
                 <i class="bi bi-speedometer2"></i>
                 Dashboard
 
             </a>
+@endif
 
 
             <a href="{{ route('habitaciones.index') }}"
@@ -844,67 +907,81 @@ html, body, body:not(.login-theme), body.login-theme {
             </a>
 
 
-            <a href="{{ route('reservas.index') }}"
+            @if (session('usuario.rol') !== 'Mantenimiento')
+<a href="{{ route('reservas.index') }}"
                class="menu-item @yield('menu-reservas')">
 
                 <i class="bi bi-calendar-check"></i>
                 Reservas
 
             </a>
+@endif
 
 
-            <a href="{{ route('huespedes.index') }}"
+            @if (session('usuario.rol') !== 'Mantenimiento')
+<a href="{{ route('huespedes.index') }}"
                class="menu-item @yield('menu-huespedes')">
 
                 <i class="bi bi-people"></i>
                 Huéspedes
 
             </a>
+@endif
 
 
-            <a href="{{ route('estadias.index') }}"
+            @if (session('usuario.rol') !== 'Mantenimiento')
+<a href="{{ route('estadias.index') }}"
                class="menu-item @yield('menu-checkin')">
 
                 <i class="bi bi-arrow-left-right"></i>
                 Check-in/Check-out
 
             </a>
+@endif
 
 
-            <a href="{{ route('pagos.index') }}"
+            @if (session('usuario.rol') !== 'Mantenimiento')
+<a href="{{ route('pagos.index') }}"
                class="menu-item @yield('menu-pagos')">
 
                 <i class="bi bi-credit-card"></i>
                 Pagos y Servicios
 
             </a>
+@endif
 
 
-            <a href="{{ route('reportes.index') }}"
+            @if (session('usuario.rol') === 'Administrador')
+<a href="{{ route('reportes.index') }}"
                class="menu-item @yield('menu-reportes')">
 
                 <i class="bi bi-bar-chart"></i>
                 Reportes
 
             </a>
+@endif
 
 
-            <a href="{{ route('usuarios.index') }}"
+            @if (session('usuario.rol') === 'Administrador')
+<a href="{{ route('usuarios.index') }}"
                class="menu-item @yield('menu-usuarios')">
 
                 <i class="bi bi-person-gear"></i>
                 Usuarios
 
             </a>
+@endif
 
 
-            <a href="{{ route('configuracion.index') }}"
+            @if (session('usuario.rol') === 'Administrador')
+<a href="{{ route('configuracion.index') }}"
                class="menu-item">
 
                 <i class="bi bi-gear"></i>
                 Configuración
 
             </a>
+@endif
 
         </nav>
 
