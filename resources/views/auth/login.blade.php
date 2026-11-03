@@ -14,8 +14,9 @@
         button { width: 100%; margin-top: 24px; background: #2563eb; color: white; border: 0; padding: 13px; border-radius: 8px; cursor: pointer; font-size: 16px; font-weight: bold; }
         .error { margin-top: 12px; color: #b91c1c; font-size: 14px; }
     </style>
+    <link rel="stylesheet" href="{{ asset('css/hotelh9-urban-slate.css') }}">
 </head>
-<body>
+<body class="login-theme">
     <main class="panel">
         <h1>Gestión Hotel H9</h1>
         <p>Ingreso de personal — Versión MongoDB</p>
