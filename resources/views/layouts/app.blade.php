@@ -311,6 +311,7 @@
     </style>
 
     @stack('styles')
+    <link rel="stylesheet" href="{{ asset('css/hotelh9-urban-slate.css') }}">
 
 </head>
 
