@@ -288,11 +288,13 @@
 
     </form>
 
-    <a href="{{ route('habitaciones.create') }}"
+    @if (session('usuario.rol') === 'Administrador')
+<a href="{{ route('habitaciones.create') }}"
        class="btn-nueva">
         <i class="bi bi-plus-lg"></i>
         Nueva habitación
     </a>
+@endif
 
 </div>
 
@@ -354,7 +356,9 @@
 
                         <td>
 
-                            <form
+                            @if (in_array(session('usuario.rol'), ['Administrador', 'Recepcionista', 'Mantenimiento'], true))
+    @if (in_array(session('usuario.rol'), ['Administrador', 'Recepcionista'], true) || !in_array($habitacion->estado, ['Reservada', 'Ocupada'], true))
+<form
                                 method="POST"
                                 action="{{ route('habitaciones.estado', $habitacion->id_habitacion) }}"
                                 class="estado-form"
@@ -370,15 +374,19 @@
                                         Disponible
                                     </option>
 
-                                    <option value="Reservada"
+                                    @if (in_array(session('usuario.rol'), ['Administrador', 'Recepcionista'], true))
+<option value="Reservada"
                                         {{ $habitacion->estado === 'Reservada' ? 'selected' : '' }}>
                                         Reservada
                                     </option>
+@endif
 
-                                    <option value="Ocupada"
+                                    @if (in_array(session('usuario.rol'), ['Administrador', 'Recepcionista'], true))
+<option value="Ocupada"
                                         {{ $habitacion->estado === 'Ocupada' ? 'selected' : '' }}>
                                         Ocupada
                                     </option>
+@endif
 
                                     <option value="En limpieza"
                                         {{ $habitacion->estado === 'En limpieza' ? 'selected' : '' }}>
@@ -398,6 +406,12 @@
                                 </button>
 
                             </form>
+    @else
+        <span>Gestionada por recepción</span>
+    @endif
+@else
+    <span>Solo lectura</span>
+@endif
 
                         </td>
 

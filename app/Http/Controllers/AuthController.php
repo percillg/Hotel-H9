@@ -14,7 +14,7 @@ class AuthController extends Controller
 
     public function showLogin()
     {
-        return session()->has('usuario') ? redirect()->route('dashboard') : view('auth.login');
+        return session()->has('usuario') ? redirect()->route(session('usuario.rol') === 'Mantenimiento' ? 'habitaciones.index' : 'dashboard') : view('auth.login');
     }
 
     public function login(Request $request)
@@ -39,7 +39,7 @@ class AuthController extends Controller
             'rol' => $usuario->rol,
         ]]);
 
-        return redirect()->route('dashboard');
+        return redirect()->route($usuario->rol === 'Mantenimiento' ? 'habitaciones.index' : 'dashboard');
     }
 
     public function logout(Request $request)
