@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Dashboard - Gestión Hotel')
+@section('title', 'Dashboard - Hotel-H9')
 @section('page-title', 'Dashboard')
 @section('menu-dashboard', 'active')
 

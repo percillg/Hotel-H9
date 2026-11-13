@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Reportes - Gestión Hotel')
+@section('title', 'Reportes - Hotel-H9')
 @section('page-title', 'Reportes')
 @section('menu-reportes', 'active')
 
@@ -101,8 +101,8 @@
         align-items: center;
         justify-content: center;
         border-radius: 8px;
-        background: #eff6ff;
-        color: #2563eb;
+        background: #E9E6E7;
+        color: #4F4845;
         font-size: 18px;
     }
 
@@ -190,8 +190,8 @@
     }
 
     .badge-confirmada {
-        background: #dbeafe;
-        color: #1d4ed8;
+        background: #E9E6E7;
+        color: #4F4845;
     }
 
     .badge-pendiente {

@@ -8,11 +8,11 @@
 <style>
     .ficha-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; margin-bottom: 20px; }
     .ficha-header h2 { margin: 0 0 6px; font-size: 22px; }
-    .ficha-header p { margin: 0; color: #64748b; font-size: 14px; }
+    .ficha-header p { margin: 0; color: #E9E6E7; font-size: 14px; }
     .ficha-acciones { display: flex; flex-wrap: wrap; gap: 8px; }
     .ficha-acciones a { display: inline-flex; gap: 8px; align-items: center; justify-content: center; min-height: 44px; padding: 10px 15px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; }
     .ficha-volver { color: #475569; border: 1px solid #cbd5e1; background: white; }
-    .ficha-editar { color: white; background: #2563eb; }
+    .ficha-editar { color: white; background: #4F4845; }
     .ficha-card { background: white; border: 1px solid #dbe3ee; border-radius: 12px; padding: 24px; margin-bottom: 20px; }
     .ficha-card h3 { font-size: 17px; margin: 0 0 18px; }
     .ficha-datos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }

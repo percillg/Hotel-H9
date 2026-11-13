@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Reservas - Gestión Hotel')
+@section('title', 'Reservas - Hotel-H9')
 @section('page-title', 'Reservas')
 @section('menu-reservas', 'active')
 
@@ -117,6 +117,7 @@
         align-items: center;
         gap: 8px;
 
+        white-space: nowrap;
         background: #2563eb;
         color: white;
 

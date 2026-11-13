@@ -378,7 +378,7 @@ body:not(.login-theme) {
 }
 
 .user-area,
-.logo-text span,
+
 .content .form-description,
 .content .info,
 .content .dato-secundario,

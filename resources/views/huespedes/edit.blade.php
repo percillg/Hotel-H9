@@ -6,7 +6,7 @@
 
 @push('styles')
 <style>
-    .edit-card { max-width: 900px; background: #fff; border: 1px solid #dbe3ee; border-radius: 12px; padding: 28px; }
+    .edit-card { max-width: 900px; background: #F8F6F5; border: 1px solid #dbe3ee; border-radius: 12px; padding: 28px; }
     .edit-card h2 { margin: 0 0 6px; font-size: 20px; }
     .edit-description { color: #64748b; margin: 0 0 24px; font-size: 14px; }
     .edit-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
@@ -21,7 +21,7 @@
     .edit-actions { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 10px; padding-top: 20px; margin-top: 24px; border-top: 1px solid #e2e8f0; }
     .edit-actions a, .edit-actions button { min-height: 44px; padding: 11px 18px; border-radius: 8px; font: inherit; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer; }
     .edit-back { color: #475569; background: white; border: 1px solid #cbd5e1; }
-    .edit-save { background: #2563eb; color: white; border: 1px solid #2563eb; }
+    .edit-save { background: #4F4845; color: white; border: 1px solid #4F4845; }
     @media (max-width: 700px) { .edit-card { padding: 18px; } .edit-grid { grid-template-columns: 1fr; } .edit-field.full { grid-column: auto; } .edit-actions a, .edit-actions button { flex: 1 1 145px; } }
 </style>
 @endpush

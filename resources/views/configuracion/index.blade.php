@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Configuración - Gestión Hotel')
+@section('title', 'Configuración - Hotel-H9')
 @section('page-title', 'Configuración')
 @section('menu-configuracion', 'active')
 

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Usuarios - Gestión Hotel')
+@section('title', 'Usuarios - Hotel-H9')
 @section('page-title', 'Usuarios del hotel')
 @section('menu-usuarios', 'active')
 @section('content')
@@ -7,7 +7,7 @@
         <div style="display:flex; justify-content:space-between; align-items:center; gap:15px; margin-bottom:20px;">
             <div>
                 <h2 style="margin:0 0 6px;">Personal registrado</h2>
-                <p style="margin:0; color:#64748b;">Cuentas y roles almacenados en MongoDB</p>
+                <p style="margin:0; color:#5E5653;">Cuentas y roles almacenados en MongoDB</p>
             </div>
             @if (session('usuario.rol') === 'Administrador')
                 <a href="{{ route('usuarios.create') }}" class="btn-primary">Nuevo usuario</a>

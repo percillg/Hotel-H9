@@ -261,7 +261,7 @@
     $fechaMaxima = now('America/Santiago')->toDateString();
 @endphp
 
-<p style="margin-bottom: 18px; color: #64748b; font-size: 13px;">
+<p style="margin-bottom: 18px; color: #E9E6E7; font-size: 13px;">
     El check-in admite fechas desde hace 7 días hasta hoy. El check-out solo permite fechas posteriores al check-in. Si eliges una fecha futura, se programa la salida sin finalizar la estadía.
 </p>
 
