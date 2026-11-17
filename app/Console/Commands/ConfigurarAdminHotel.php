@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Services\HotelMongo;
+use App\Models\UsuarioHotel;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Hash;
 
@@ -10,9 +10,9 @@ class ConfigurarAdminHotel extends Command
 {
     protected $signature = 'hotel:configurar-admin';
 
-    protected $description = 'Configura la contraseña del administrador del hotel en MongoDB';
+    protected $description = 'Configura la contraseña del administrador del hotel (tabla usuarios en MySQL)';
 
-    public function handle(HotelMongo $mongo): int
+    public function handle(): int
     {
         $username = $this->ask('Nombre del usuario administrador', 'admin');
         $password = $this->secret('Nueva contraseña (mínimo 10 caracteres)');
@@ -22,12 +22,11 @@ class ConfigurarAdminHotel extends Command
             return self::FAILURE;
         }
 
-        $resultado = $mongo->collection('usuarios')->updateOne(
-            ['nombre_usuario' => $username, 'rol' => 'Administrador'],
-            ['$set' => ['password_hash' => Hash::make($password)]]
-        );
+        $actualizados = UsuarioHotel::where('nombre_usuario', $username)
+            ->where('rol', 'Administrador')
+            ->update(['password_hash' => Hash::make($password)]);
 
-        if ($resultado->getMatchedCount() === 0) {
+        if ($actualizados === 0) {
             $this->error('No se encontró un usuario administrador con ese nombre.');
             return self::FAILURE;
         }

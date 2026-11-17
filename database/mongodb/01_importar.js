@@ -12,17 +12,6 @@ const requerido = (campos, propiedades) => ({
 });
 
 const esquemas = {
-  usuarios: requerido(
-    ["_id", "nombre", "apellido", "nombre_usuario", "password_hash", "rol"],
-    {
-      _id: int,
-      nombre: { bsonType: "string" },
-      apellido: { bsonType: "string" },
-      nombre_usuario: { bsonType: "string" },
-      password_hash: { bsonType: "string" },
-      rol: { enum: ["Administrador", "Recepcionista", "Personal de acceso", "Mantenimiento"] }
-    }
-  ),
   huespedes: requerido(
     ["_id", "nombre", "apellido", "rut", "telefono", "email", "direccion"],
     {
@@ -126,7 +115,6 @@ const esquemas = {
 };
 
 const indices = {
-  usuarios: [{ keys: { nombre_usuario: 1 }, options: { unique: true } }],
   huespedes: [{ keys: { rut: 1 }, options: { unique: true } }],
   habitaciones: [{ keys: { numero: 1 }, options: { unique: true } }, { keys: { estado: 1 } }],
   servicios: [{ keys: { estado: 1 } }],
@@ -142,7 +130,7 @@ const indices = {
   ]
 };
 
-const nombres = ["usuarios", "huespedes", "habitaciones", "servicios", "reservas", "pagos"];
+const nombres = ["huespedes", "habitaciones", "servicios", "reservas", "pagos"];
 const documentos = {};
 
 for (const nombre of nombres) {
@@ -152,6 +140,12 @@ for (const nombre of nombres) {
     throw new Error("Archivo JSON sin arreglo de documentos: " + nombre);
   }
   documentos[nombre] = datos;
+}
+
+// Los usuarios ahora viven en MySQL (tabla usuarios); se quita la colección antigua si existe.
+if (hotelDb.getCollectionNames().includes("usuarios")) {
+  hotelDb.usuarios.drop();
+  print("usuarios: colección eliminada (ahora está en MySQL)");
 }
 
 const existentes = hotelDb.getCollectionNames();

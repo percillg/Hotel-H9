@@ -2,20 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\HotelMongo;
+use App\Models\UsuarioHotel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
 class UsuarioHotelController extends Controller
 {
-    public function __construct(private HotelMongo $mongo)
-    {
-    }
-
     public function index()
     {
         if (session('usuario.rol') !== 'Administrador') abort(403);
-        $usuarios = $this->mongo->all('usuarios', [], ['sort' => ['nombre' => 1]]);
+        $usuarios = UsuarioHotel::orderBy('nombre')->get();
         return view('usuarios.index', compact('usuarios'));
     }
 
@@ -37,12 +33,11 @@ class UsuarioHotelController extends Controller
             'rol' => 'required|in:Administrador,Recepcionista,Personal de acceso,Mantenimiento',
         ]);
 
-        if ($this->mongo->one('usuarios', ['nombre_usuario' => $datos['nombre_usuario']])) {
+        if (UsuarioHotel::porNombreUsuario($datos['nombre_usuario'])) {
             return back()->withInput()->withErrors(['nombre_usuario' => 'El nombre de usuario ya existe.']);
         }
 
-        $this->mongo->collection('usuarios')->insertOne([
-            '_id' => $this->mongo->nextId('usuarios'),
+        UsuarioHotel::create([
             'nombre' => $datos['nombre'],
             'apellido' => $datos['apellido'],
             'nombre_usuario' => $datos['nombre_usuario'],
